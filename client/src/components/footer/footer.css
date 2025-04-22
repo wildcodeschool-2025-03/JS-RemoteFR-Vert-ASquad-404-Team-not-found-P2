@@ -1,0 +1,9 @@
+footer {
+  margin: 0 auto;
+}
+
+.iconesReseaux {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
