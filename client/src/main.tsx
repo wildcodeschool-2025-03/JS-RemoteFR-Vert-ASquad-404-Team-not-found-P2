@@ -2,6 +2,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router";
+import CardItem from "./pages/CardItem";
+import Evenements from "./pages/Evenements";
+import Home from "./pages/Home";
+import SolarSystem from "./pages/SolarSystem";
 
 /* ************************************************************************* */
 
@@ -20,8 +24,25 @@ import App from "./App";
 // You can add more routes as you build out your app!
 const router = createBrowserRouter([
   {
-    path: "/", // The root path
-    element: <App />, // Renders the App component for the home page
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/systeme-solaire",
+        element: <SolarSystem />,
+      },
+      {
+        path: "/systeme-solaire/:id",
+        element: <CardItem />,
+      },
+      {
+        path: "/evenements",
+        element: <Evenements />,
+      },
+    ],
   },
   // Try adding a new route! For example, "/about" with an About component
 ]);
@@ -39,7 +60,7 @@ if (rootElement == null) {
 createRoot(rootElement).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>
+  </StrictMode>,
 );
 
 /**
