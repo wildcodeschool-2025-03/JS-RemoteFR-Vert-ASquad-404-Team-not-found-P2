@@ -1,0 +1,37 @@
+@font-face {
+  font-family: saira;
+  src: url(../../assets/Fonts/SairaStencilOne-Regular.ttf);
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.logo {
+  height: 15vh;
+  width: auto;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 3vw;
+  padding: 0;
+}
+
+nav ul li {
+  text-decoration: none;
+  list-style-type: none;
+  color: black;
+}
+
+.astralis {
+  margin-top: 6vh;
+  max-height: 70%;
+  color: #e1ceaa;
+  font-family: "saira", sans-serif;
+  font-size: 4vh;
+  text-align: center;
+}
