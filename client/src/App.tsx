@@ -1,8 +1,10 @@
 import "./App.css";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
     <>
+      <Footer />
       <header>
         <h1 className="logo">JS Monorepo</h1>
       </header>

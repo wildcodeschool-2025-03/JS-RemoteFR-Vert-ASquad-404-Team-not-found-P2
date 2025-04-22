@@ -5,5 +5,15 @@ footer {
 .iconesReseaux {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 3em;
+}
+.iconesReseaux img {
+  height: 3em;
+}
+
+footer p {
+  display: block;
+  text-align: center;
+  color: white;
 }
