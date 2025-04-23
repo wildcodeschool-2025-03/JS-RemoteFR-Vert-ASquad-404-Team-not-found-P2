@@ -1,11 +1,11 @@
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
+import CardDescription from "./components/CardDescription";
 
 function App() {
   return (
-    <>
-      <Navbar />
-    </>
+    <div>
+      <CardDescription />
+    </div>
   );
 }
 
