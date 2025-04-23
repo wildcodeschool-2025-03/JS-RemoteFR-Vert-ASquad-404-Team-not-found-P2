@@ -2,10 +2,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router";
-import CardItem from "./pages/CardItem";
-import Evenements from "./pages/Evenements";
-import Home from "./pages/Home";
-import SolarSystem from "./pages/SolarSystem";
 
 /* ************************************************************************* */
 
@@ -28,19 +24,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <h1>home</h1>,
       },
       {
         path: "/systeme-solaire",
-        element: <SolarSystem />,
+        element: <h1>Systeme solaire</h1>,
       },
       {
         path: "/systeme-solaire/:id",
-        element: <CardItem />,
+        element: <h1>Carte planetes</h1>,
       },
       {
         path: "/evenements",
-        element: <Evenements />,
+        element: <h1>evenements</h1>,
       },
     ],
   },
