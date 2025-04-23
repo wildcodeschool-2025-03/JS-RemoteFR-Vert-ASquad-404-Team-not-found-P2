@@ -44,9 +44,9 @@
       transparent
     );
   mask-composite: intersect;
-  border-radius: 2em;
+  border-radius: 1em;
   @media screen and (min-width: 768px) {
-    border-radius: 5em;
+    border-radius: 2em;
   }
 }
 
