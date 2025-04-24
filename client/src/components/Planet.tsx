@@ -30,7 +30,13 @@ const Planet: React.FC<PlanetProps> = ({
       }}
     >
       <div
-        className={`planet ${planet.name === "Saturne" ? "saturne" : ""}`}
+          className={`planet ${
+              planet.name.toLowerCase() === "saturne"
+                  ? "saturne"
+                  : planet.name.toLowerCase() === "jupiter"
+                      ? "jupiter"
+                      : ""
+          }`}
         style={{
           backgroundImage: planet.image ? `url(${planet.image})` : "none",
         }}
