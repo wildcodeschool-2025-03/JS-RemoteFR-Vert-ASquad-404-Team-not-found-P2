@@ -52,10 +52,11 @@ export default function PicOfTheDay() {
     <div className="picOfTheDay_container">
       <h2>{picOfTheDay?.title}</h2>
       <img src={picOfTheDay?.hdurl} alt="pic of the day" />
+      <p className="pic_explanation">{picOfTheDay?.explanation}</p>
       <div className="calendar_container">
+        <p>Voir une autre photo en choissisant une date antérieure</p>
         <DatePicker onChange={onChange} value={value} format="yyyy-MM-dd" />
       </div>
-      <p className="pic_explanation">{picOfTheDay?.explanation}</p>
     </div>
   );
 }

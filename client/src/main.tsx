@@ -2,8 +2,9 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router";
 import App from "./App.tsx";
-import CardDescription from "./components/CardDescription.tsx";
+
 import SystemeSolaire from "./pages/systeme-solaire";
+import HomePage from "./pages/HomePage.tsx";
 
 const rootElement = document.getElementById("root");
 
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <CardDescription />,
+        element: <HomePage />,
       },
       {
         path: "/systeme-solaire",
