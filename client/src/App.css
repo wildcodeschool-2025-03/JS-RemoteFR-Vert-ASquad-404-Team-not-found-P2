@@ -12,8 +12,7 @@ body,
 }
 
 body {
-  background: url("../public/images/Night_sky.jpg") no-repeat center center
-    fixed;
+  background: url("/images/Night_sky.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
