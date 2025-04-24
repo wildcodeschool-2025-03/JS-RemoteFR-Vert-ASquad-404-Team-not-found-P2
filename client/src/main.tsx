@@ -3,8 +3,8 @@ import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router";
 import App from "./App.tsx";
 
-import SystemeSolaire from "./pages/systeme-solaire";
 import HomePage from "./pages/HomePage.tsx";
+import SystemeSolaire from "./pages/systeme-solaire";
 
 const rootElement = document.getElementById("root");
 

@@ -165,10 +165,9 @@
 
 .react-date-picker__calendar-button {
   background-color: gray !important;
-  border-top-right-radius: 1em !important;
-  border-bottom-right-radius: 1em !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  border-top-right-radius: 1.6em !important;
+  border-bottom-right-radius: 1.6em !important;
+  padding: 0 1em 0 1em !important;
 }
 
 .react-date-picker__calendar-button:hover {
@@ -178,8 +177,5 @@
 }
 .react-date-picker__calendar-button__icon {
   stroke: white !important;
-  height: .6em !important;
-  @media screen and (min-width: 768px) {
-    height: .8em !important;
-  }
+  height: 1em !important;
 }
