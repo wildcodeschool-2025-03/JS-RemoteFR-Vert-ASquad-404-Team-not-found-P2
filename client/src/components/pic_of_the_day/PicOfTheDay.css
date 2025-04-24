@@ -6,11 +6,6 @@
   margin: 0 auto;
 }
 
-.pictureAndDate {
-  position: relative;
-  width: 100%;
-}
-
 .picOfTheDay_container img {
   width: 100%;
   -webkit-mask: linear-gradient(
@@ -53,34 +48,19 @@
 .picOfTheDay_container h2 {
   font-weight: bold;
   color: white;
-  font-size: .5em;
+  margin: 1em;
+  font-size: .6em;
   @media screen and (min-width: 768px) {
     font-size: 1em;
-  }
-}
-
-.pic_date {
-  position: absolute;
-  font-weight: bold;
-  color: white;
-  font-size: .5em;
-  right: 8%;
-  top: 88%;
-
-  @media screen and (min-width: 768px) {
-    font-size: .8em;
-    right: 13%;
-    top: 90%;
   }
 }
 
 .pic_explanation {
   width: 120%;
   color: white;
-  font-size: .3em;
+  font-size: .5em;
   margin: 1em;
   background: rgba(255, 255, 255, 0.1);
-  color: white;
   border-radius: .8em;
   backdrop-filter: blur(.1em);
   -webkit-backdrop-filter: blur(.1em);
@@ -92,6 +72,89 @@
   padding: 1em;
   margin-bottom: 2em;
   @media screen and (min-width: 768px) {
+    font-size: .7em;
+  }
+}
+
+/* -------------------------------------   React Date Picker custom styles -------------------------------------- */
+.react-date-picker {
+  border: .1em solid rgb(250, 250, 253);
+  border-radius: 10em;
+  color: white;
+  width: 11em;
+  height: 1.5em;
+  font-size: .6em;
+  margin-bottom: 1em;
+  @media screen and (min-width: 768px) {
+    margin-top: .8em;
     font-size: .8em;
+  }
+}
+
+.react-date-picker__wrapper {
+  border: none !important;
+  width: 100% !important;
+}
+
+.react-date-picker__inputGroup {
+  text-align: center !important;
+}
+
+.react-calendar {
+  background: rgba(95, 94, 94, 0.4) !important;
+  border: none !important;
+  color: white;
+  border-radius: .8em;
+  backdrop-filter: blur(.1em);
+  -webkit-backdrop-filter: blur(.1em);
+  border-radius: 1em;
+  padding: .6em;
+  transform: translateX(-25%);
+}
+
+.react-calendar__navigation button {
+  color: white;
+  height: 1em;
+}
+
+.react-calendar__tile:hover {
+  background: rgba(41, 40, 41, 0.5) !important;
+  border-radius: 1em;
+}
+
+.react-calendar__tile--active {
+  background: rgb(0, 0, 0) !important;
+  border-radius: 1em;
+  color: white;
+}
+
+.react-calendar__tile--now {
+  background: rgba(0, 0, 0, 0.7) !important;
+  color: white;
+  border-radius: 1em;
+}
+
+.react-date-picker__clear-button {
+  display: none !important;
+}
+
+.react-date-picker__calendar-button {
+  background-color: gray !important;
+  border-top-right-radius: 1em !important;
+  border-bottom-right-radius: 1em !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.react-date-picker__calendar-button:hover {
+  background-color: rgb(128, 128, 128, 0.3) !important;
+  backdrop-filter: blur(.1em);
+  -webkit-backdrop-filter: blur(.1em);
+}
+.react-date-picker__calendar-button__icon {
+  stroke: white !important;
+  height: .6em !important;
+  @media screen and (min-width: 768px) {
+    height: .8em !important;
   }
 }
