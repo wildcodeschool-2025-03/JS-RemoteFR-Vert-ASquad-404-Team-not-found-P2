@@ -1,9 +1,9 @@
 .card-description {
-  Width: 90%;
-  Max-width: 600px;
-  Margin: 20px auto;
-  Padding: 20px 25px;
-  Background: rgba(255, 255, 255, 0.1);
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px 25px;
+  background: rgba(255, 255, 255, 0.1);
   color: white;
   border-radius: 40px;
   backdrop-filter: blur(1px);

@@ -1,5 +1,23 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: url("../src/assets/images/Night_sky.jpg") no-repeat center center
+  background: url("../public/images/Night_sky.jpg") no-repeat center center
     fixed;
   background-size: cover;
+}
+
+.app-container {
+  height: 100%;
+  width: 100%;
 }
