@@ -18,13 +18,13 @@ function Navbar() {
       <p className="astralis">Astralis</p>
       <ul className="links">
         <NavLink
-          to="/Home"
+          to="/"
           className={({ isActive }) => (isActive ? "active-link" : "")}
         >
           Home
         </NavLink>
         <NavLink
-          to="/SystemeSolaire"
+          to="/systeme-solaire"
           className={({ isActive }) => (isActive ? "active-link" : "")}
         >
           Système Solaire
