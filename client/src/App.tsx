@@ -1,10 +1,10 @@
 import "./App.css";
-import PicOfTheDay from "./components/pic_of_the_day/PicOfTheDay";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <PicOfTheDay />
+    <div className="app-container">
+      <Outlet />
     </div>
   );
 }
