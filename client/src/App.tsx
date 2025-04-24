@@ -1,10 +1,10 @@
 import "./App.css";
-import PicOfTheDay from "./components/pic_of_the_day/PicOfTheDay";
+import CardDescription from "./components/CardDescription";
 
 function App() {
   return (
     <div>
-      <PicOfTheDay />
+      <CardDescription />
     </div>
   );
 }
