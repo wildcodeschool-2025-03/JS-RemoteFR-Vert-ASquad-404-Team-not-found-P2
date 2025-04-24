@@ -1,10 +1,10 @@
 import "./App.css";
-import CardDescription from "./components/CardDescription";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <CardDescription />
+    <div className="app-container">
+      <Outlet />
     </div>
   );
 }
