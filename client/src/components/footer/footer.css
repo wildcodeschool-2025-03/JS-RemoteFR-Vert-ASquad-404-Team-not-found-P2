@@ -1,0 +1,19 @@
+footer {
+  margin: 0 auto;
+}
+
+.iconesReseaux {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3em;
+}
+.iconesReseaux img {
+  height: 3em;
+}
+
+footer p {
+  display: block;
+  text-align: center;
+  color: white;
+}
