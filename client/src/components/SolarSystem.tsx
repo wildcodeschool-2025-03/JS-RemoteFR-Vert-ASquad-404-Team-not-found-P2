@@ -1,8 +1,8 @@
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
-import { type PlanetData, planets } from "../data/planete.ts";
 import Planet from "../components/Planet.tsx";
 import PlanetInfoCard from "../components/PlanetInfoCard.tsx";
+import { type PlanetData, planets } from "../data/planete.ts";
 import "../components/SolarisSystem.css";
 
 const SolarSystem: React.FC = () => {
