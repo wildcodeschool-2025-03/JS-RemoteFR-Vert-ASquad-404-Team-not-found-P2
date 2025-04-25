@@ -1,6 +1,7 @@
 import { NavLink } from "react-router";
 import "./navbar.css";
 import { useState } from "react";
+import logo from "../../assets/images/Astralis-svg-Final.svg";
 
 function Navbar() {
   const [showLinks, setShowLinks] = useState(false);
@@ -10,11 +11,7 @@ function Navbar() {
   };
   return (
     <nav className={`${showLinks ? "show-nav" : "hidden"}`}>
-      <img
-        className="logo"
-        src="../../src/assets/images/Astralis-svg-Final.svg"
-        alt="logo planete astralis"
-      />
+      <img className="logo" src={logo} alt="logo planete astralis" />
       <p className="astralis">Astralis</p>
       <ul className="links">
         <NavLink
