@@ -38,10 +38,9 @@ const PlanetInfoCard = forwardRef<HTMLDivElement, Props>(
 
         <div className="planet-info-content">
           <h3>{planet.name}</h3>
-          {planet.description.split("|").map((line, index) => (
-            // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-            <p key={index}>{line.trim()}</p>
-          ))}
+            {planet.description.split("|").map((line) => (
+                <p key={line.trim()}>{line.trim()}</p>
+            ))}
           <Link to={planet.link}>En savoir plus</Link>
         </div>
       </div>
