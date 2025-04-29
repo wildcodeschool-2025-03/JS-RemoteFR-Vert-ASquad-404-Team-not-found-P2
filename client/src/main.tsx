@@ -4,8 +4,8 @@ import { RouterProvider, createBrowserRouter } from "react-router";
 import App from "./App.tsx";
 
 import HomePage from "./pages/HomePage.tsx";
-import SystemeSolaire from "./pages/systeme-solaire";
 import PlanetInfo from "./pages/PlanetInfo.tsx";
+import SystemeSolaire from "./pages/systeme-solaire";
 
 const rootElement = document.getElementById("root");
 
