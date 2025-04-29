@@ -4,8 +4,8 @@ import { RouterProvider, createBrowserRouter } from "react-router";
 import App from "./App.tsx";
 
 import HomePage from "./pages/HomePage.tsx";
-import SystemeSolaire from "./pages/systeme-solaire";
 import Page_404 from "./pages/Page_404.tsx";
+import SystemeSolaire from "./pages/systeme-solaire";
 
 const rootElement = document.getElementById("root");
 
@@ -35,12 +35,12 @@ const router = createBrowserRouter([
       },
       {
         path: "*",
-        element: <Page_404 />
+        element: <Page_404 />,
       },
       {
         path: "/systeme-solaire/*",
-        element: <Page_404 />
-      }
+        element: <Page_404 />,
+      },
     ],
   },
 ]);
