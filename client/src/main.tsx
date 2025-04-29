@@ -5,6 +5,7 @@ import App from "./App.tsx";
 
 import HomePage from "./pages/HomePage.tsx";
 import SystemeSolaire from "./pages/systeme-solaire";
+import PlanetInfo from "./pages/PlanetInfo.tsx";
 
 const rootElement = document.getElementById("root");
 
@@ -25,8 +26,8 @@ const router = createBrowserRouter([
         element: <SystemeSolaire />,
       },
       {
-        path: "/systeme-solaire/:id",
-        element: <h1>Carte planetes</h1>,
+        path: "/PlanetInfo/:id",
+        element: <PlanetInfo />,
       },
       {
         path: "/evenements",

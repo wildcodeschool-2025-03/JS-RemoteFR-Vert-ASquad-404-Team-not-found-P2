@@ -264,7 +264,9 @@ const infoSolarSystem = [
   },
 ];
 
-app.get("/", (req, res) => {
+// Modified route using id from the front end planet selection to only return the corresponding planet
+app.get("/:id", (req, res) => {
+  res.send(infoSolarSystem[Number.parseInt(req.params.id)]);
   res.json([infoSolarSystem]);
 });
 
