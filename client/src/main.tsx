@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router";
 import App from "./App.tsx";
 
+import Evenements from "./pages/Evenements.tsx";
 import HomePage from "./pages/HomePage.tsx";
 import SystemeSolaire from "./pages/systeme-solaire";
 
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/evenements",
-        element: <h1>evenements</h1>,
+        element: <Evenements />,
       },
     ],
   },

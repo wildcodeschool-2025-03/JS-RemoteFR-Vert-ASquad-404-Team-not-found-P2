@@ -1,0 +1,27 @@
+.mainEvents {
+  width: 80%;
+  margin: 0 10% 0 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: white;
+}
+
+.dotted {
+  position: relative;
+}
+
+.dotted::after {
+  background-color: yellow;
+  border-radius: 50%;
+  content: "";
+  width: 6px;
+  height: 6px;
+  display: block;
+  position: absolute;
+  bottom: 2px;
+  left: calc(50% - 2px);
+}
