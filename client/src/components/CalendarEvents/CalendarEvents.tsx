@@ -52,14 +52,9 @@ export default function CalendarEvents() {
         ),
     ) || [];
 
-  console.log(transDate);
-
-  //const eclipse = [new Date(2023, 2, 29), new Date(2023, 8, 21)];
-  //console.log(eclipse);
-
   return (
     <main className="mainEvents">
-      <h1>evenements</h1>
+      <h1>Calendrier d'evénements</h1>
       <Calendar
         onChange={onChange}
         value={value}
@@ -74,6 +69,9 @@ export default function CalendarEvents() {
           return classes;
         }}
       />
+      <p>
+        <span className="point" /> : Jour d'éclipse solaire
+      </p>
     </main>
   );
 }
