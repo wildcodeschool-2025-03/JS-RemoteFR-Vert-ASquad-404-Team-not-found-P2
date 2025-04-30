@@ -37,10 +37,6 @@ const router = createBrowserRouter([
         path: "*",
         element: <Page_404 />,
       },
-      {
-        path: "/systeme-solaire/*",
-        element: <Page_404 />,
-      },
     ],
   },
 ]);
