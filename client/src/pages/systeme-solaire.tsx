@@ -1,9 +1,10 @@
 import type React from "react";
 import SolarSystem from "../components/SolarSystem.tsx";
+import "../components/SolarisSystem.css";
 
 const SystemeSolaire: React.FC = () => {
   return (
-    <div style={{ height: "100vh", width: "100vw", overflow: "hidden" }}>
+    <div className="systeme-solaire-page">
       <SolarSystem />
     </div>
   );
