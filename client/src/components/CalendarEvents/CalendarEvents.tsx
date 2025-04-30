@@ -4,15 +4,37 @@ import Calendar from "react-calendar";
 
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
+type dateEventType = {
+  total_count: number;
+  results: [
+    {
+      ecl_type: string;
+      calendar_year: number;
+      calendar_month: string;
+      calendar_day: number;
+      td_of_greatest_eclipse: [string];
+    },
+  ];
+};
 
 export default function CalendarEvents() {
   const [value, onChange] = useState<Value>(new Date());
-  const [dateEvent, setDateEvent] = useState(null);
-  console.log(dateEvent);
-  console.log(value);
-  console.log(new Date(2025, 0, 1));
+  const [dateEvent, setDateEvent] = useState<dateEventType | null>(null);
 
-  const eclipse = [new Date(2025, 2, 29), new Date(2025, 8, 21)];
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
 
   useEffect(() => {
     fetch(
@@ -22,6 +44,19 @@ export default function CalendarEvents() {
       .then((data) => setDateEvent(data));
   }, []);
 
+  const transDate =
+    dateEvent?.results.map(
+      (d) =>
+        new Date(
+          `${d.calendar_year}, ${months.indexOf(d.calendar_month) + 1}, ${d.calendar_day}`,
+        ),
+    ) || [];
+
+  console.log(transDate);
+
+  //const eclipse = [new Date(2023, 2, 29), new Date(2023, 8, 21)];
+  //console.log(eclipse);
+
   return (
     <main className="mainEvents">
       <h1>evenements</h1>
@@ -30,8 +65,10 @@ export default function CalendarEvents() {
         value={value}
         tileClassName={({ date }) => {
           let classes = "tile";
-
-          if (eclipse?.some((b) => b.getTime() === date.getTime())) {
+          if (
+            transDate.length > 0 &&
+            transDate.some((b) => b.getTime() === date.getTime())
+          ) {
             classes = `${classes} dotted`;
           }
           return classes;
