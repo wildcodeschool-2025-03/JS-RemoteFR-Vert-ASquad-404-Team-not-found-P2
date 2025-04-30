@@ -1,6 +1,6 @@
 import type React from "react";
 import { forwardRef } from "react";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import type { PlanetData } from "../data/planete.ts";
 
 interface Props {
@@ -41,7 +41,7 @@ const PlanetInfoCard = forwardRef<HTMLDivElement, Props>(
           {planet.description.split("|").map((line) => (
             <p key={line.trim()}>{line.trim()}</p>
           ))}
-          <Link to={planet.link}>En savoir plus</Link>
+          <NavLink to={`/PlanetInfo/${planet.id}`}>En savoir plus</NavLink>
         </div>
       </div>
     );
