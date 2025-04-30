@@ -7,6 +7,7 @@ export interface PlanetData {
   description: string;
   link: string;
   image: string;
+  orbitSize: number;
 }
 
 export const planets: PlanetData[] = [
@@ -15,6 +16,7 @@ export const planets: PlanetData[] = [
     name: "SOLEIL",
     revolutionDays: 0,
     radius: 100,
+    orbitSize: 0,
     color: "yellow",
     description:
       "Type : Étoile | Distance : 0 M km | Masse : 1,989 × 10³⁰ kg | Diamètre : 1 392 700 km",
@@ -26,6 +28,7 @@ export const planets: PlanetData[] = [
     name: "MERCURE",
     revolutionDays: 88,
     radius: 40,
+    orbitSize: 20,
     color: "#aaa",
     description:
       "Type : Planète tellurique | Distance : 57,9 M km | Masse : 3,30 × 10²³ kg | Diamètre : 4 879 km",
@@ -37,6 +40,7 @@ export const planets: PlanetData[] = [
     name: "VENUS",
     revolutionDays: 225,
     radius: 60,
+    orbitSize: 30,
     color: "#f5deb3",
     description:
       "Type : Planète tellurique | Distance : 108,2 M km | Masse : 4,87 × 10²⁴ kg | Diamètre : 12 104 km",
@@ -48,6 +52,7 @@ export const planets: PlanetData[] = [
     name: "TERRE",
     revolutionDays: 365,
     radius: 80,
+    orbitSize: 40,
     color: "#2e86de",
     description:
       "Type : Planète tellurique | Distance : 149,6 M km | Masse : 5,97 × 10²⁴ kg | Diamètre : 12 742 km",
@@ -59,6 +64,7 @@ export const planets: PlanetData[] = [
     name: "MARS",
     revolutionDays: 687,
     radius: 100,
+    orbitSize: 50,
     color: "#d35400",
     description:
       "Type : Planète tellurique | Distance : 227,9 M km | Masse : 6,42 × 10²³ kg | Diamètre : 6 779 km",
@@ -70,6 +76,7 @@ export const planets: PlanetData[] = [
     name: "JUPITER",
     revolutionDays: 4331,
     radius: 130,
+    orbitSize: 62,
     color: "#e1b12c",
     description:
       "Type : Géante gazeuse | Distance : 778,6 M km | Masse : 1,90 × 10²⁷ kg | Diamètre : 139 820 km",
@@ -81,6 +88,7 @@ export const planets: PlanetData[] = [
     name: "SATURNE",
     revolutionDays: 10747,
     radius: 160,
+    orbitSize: 75,
     color: "#f7dc6f",
     description:
       "Type : Géante gazeuse | Distance : 1 433,5 M km | Masse : 5,68 × 10²⁶ kg | Diamètre : 116 460 km",
@@ -92,6 +100,7 @@ export const planets: PlanetData[] = [
     name: "URANUS",
     revolutionDays: 30589,
     radius: 190,
+    orbitSize: 87,
     color: "#a29bfe",
     description:
       "Type : Géante glacée | Distance : 2 872,5 M km | Masse : 8,68 × 10²⁵ kg | Diamètre : 50 724 km",
@@ -103,6 +112,7 @@ export const planets: PlanetData[] = [
     name: "NEPTUNE",
     revolutionDays: 59800,
     radius: 220,
+    orbitSize: 100,
     color: "#2980b9",
     description:
       "Type : Géante glacée | Distance : 4 495,1 M km | Masse : 1,02 × 10²⁶ kg | Diamètre : 49 244 km",
