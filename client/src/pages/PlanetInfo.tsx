@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import Slider from "../components/Slider/Slider";
 
 type PlanetData = {
   name: string;
-  img: string;
+  img: {
+    carrousel_img1: string;
+    carrousel_img2: string;
+    carrousel_img3: string;
+  };
 };
 
 export default function PlanetInfo() {
@@ -25,6 +30,12 @@ export default function PlanetInfo() {
   return (
     <>
       <h1>{planet?.name}</h1>
+      <Slider
+        name={planet?.name}
+        img1={planet?.img.carrousel_img1}
+        img2={planet?.img.carrousel_img2}
+        img3={planet?.img.carrousel_img3}
+      />
     </>
   );
 }
