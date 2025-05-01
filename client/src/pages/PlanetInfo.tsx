@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-
+import Slider from "../components/Slider/Slider";
 import "../styles/PlanetInfo.css";
 
 type PlanetDataType = {
@@ -107,6 +107,13 @@ export default function PlanetInfo() {
           </ul>
         </div>
       </div>
+
+      <Slider
+        name={planet?.name}
+        img1={planet?.img.carrousel_img1}
+        img2={planet?.img.carrousel_img2}
+        img3={planet?.img.carrousel_img3}
+      />
     </div>
   );
 }

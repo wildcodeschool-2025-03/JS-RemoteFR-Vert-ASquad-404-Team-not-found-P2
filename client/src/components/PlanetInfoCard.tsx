@@ -7,17 +7,28 @@ interface Props {
   planet: PlanetData | null;
   onEnter: () => void;
   onLeave: () => void;
-  position: { top: number; left: number; side: "left" | "right" };
+  position: {
+    top: number;
+    left: number;
+    side: "left" | "right";
+    vertical: "top" | "bottom";
+  };
 }
 
 const PlanetInfoCard = forwardRef<HTMLDivElement, Props>(
   ({ planet, onEnter, onLeave, position }, ref) => {
     if (!planet) return null;
 
+    const avatarHeight = 50;
+    const cardHeight = 250;
+
     const style: React.CSSProperties = {
-      top: position.top,
+      top:
+        position.vertical === "top"
+          ? position.top - cardHeight - avatarHeight / 2
+          : position.top + avatarHeight / 2 + 20,
       left: position.side === "left" ? position.left - 260 : position.left + 20,
-      transform: "translateY(-50%)",
+      transform: "translateY(0)",
     };
 
     return (
