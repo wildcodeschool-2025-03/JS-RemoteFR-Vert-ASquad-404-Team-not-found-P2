@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router";
 import App from "./App.tsx";
 
+import Evenements from "./pages/Evenements.tsx";
 import HomePage from "./pages/HomePage.tsx";
 import Page_404 from "./pages/Page_404.tsx";
 import PlanetInfo from "./pages/PlanetInfo.tsx";
@@ -32,7 +33,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/evenements",
-        element: <h1>evenements</h1>,
+        element: <Evenements />,
+      },
+      {
+        path: "*",
+        element: <Page_404 />,
       },
       {
         path: "*",

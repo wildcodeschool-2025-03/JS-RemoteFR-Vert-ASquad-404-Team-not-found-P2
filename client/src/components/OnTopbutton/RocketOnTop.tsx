@@ -23,7 +23,7 @@ const RocketOnTop = () => {
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "smooth" });
       setLaunched(false);
-    }, 900);
+    }, 950);
   };
 
   return (
