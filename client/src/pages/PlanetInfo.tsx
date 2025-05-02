@@ -34,14 +34,13 @@ export default function PlanetInfo() {
   //unseState hook to store selected planet data
   const [planet, setPlanet] = useState<PlanetDataType | null>(null);
 
-  // get app-container element to change background in useEffect
-
   // fetch selected planet data using id
   useEffect(() => {
     fetch(`http://localhost:3310/${id}`)
       .then((response) => response.json())
       .then((data) => setPlanet(data))
       .catch((error) => console.log("error:", error));
+    // get app-container element to change background in useEffect
     document.querySelector(".app-container")?.classList.add("container-bg");
 
     return () => {
@@ -58,7 +57,7 @@ export default function PlanetInfo() {
       <article className="planet-description">
         <img
           src={planet?.img.description_img}
-          alt="Panète"
+          alt="Planète"
           width={500}
           style={
             planet?.name === "Saturne" || planet?.name === "Soleil"
@@ -117,7 +116,6 @@ export default function PlanetInfo() {
       </div>
 
       <Slider
-        name={planet?.name}
         img1={planet?.img.carrousel_img1}
         img2={planet?.img.carrousel_img2}
         img3={planet?.img.carrousel_img3}

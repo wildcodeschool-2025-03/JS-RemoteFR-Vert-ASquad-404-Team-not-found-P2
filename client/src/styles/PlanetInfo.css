@@ -1,5 +1,6 @@
 .app-container.container-bg {
   position: relative;
+  width: 100%;
   background-image: url("/images/Navette.png");
   background-size: cover;
   background-position: top;
