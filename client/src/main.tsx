@@ -39,10 +39,6 @@ const router = createBrowserRouter([
         path: "*",
         element: <Page_404 />,
       },
-      {
-        path: "*",
-        element: <Page_404 />,
-      },
     ],
   },
 ]);
