@@ -58,7 +58,7 @@ const infoSolarSystem = [
     number_of_satellites: 0,
     ring_system: false,
     img: {
-      description_img: "../images/Mercure1_Page1bis.png",
+      description_img: "../images/Mercure.png",
       carrousel_img1: "../images/Mercure1_Page1bis.png",
       carrousel_img2: "../images/Mercure2_Page1bis.png",
       carrousel_img3: "../images/Mercure3_Page1bis.png",
@@ -86,7 +86,7 @@ const infoSolarSystem = [
     number_of_satellites: 0,
     ring_system: false,
     img: {
-      description_img: "../images/Venus1_Page1bis.png",
+      description_img: "../images/Venus.png",
       carrousel_img1: "../images/Venus1_Page1bis.png",
       carrousel_img2: "../images/Venus2_Page1bis.png",
       carrousel_img3: "../images/Venus3_Page1bis.png",
@@ -142,7 +142,7 @@ const infoSolarSystem = [
     number_of_satellites: 2,
     ring_system: false,
     img: {
-      description_img: "../images/Mars1_Page1bis.png",
+      description_img: "../images/Mars.png",
       carrousel_img1: "../images/Mars1_Page1bis.png",
       carrousel_img2: "../images/Mars2_Page1bis.png",
       carrousel_img3: "../images/Mars3_Page1bis.png",
@@ -170,7 +170,7 @@ const infoSolarSystem = [
     number_of_satellites: 80,
     ring_system: true,
     img: {
-      description_img: "../images/Jupiter1_Page1bis.png",
+      description_img: "../images/Jupiter.png",
       carrousel_img1: "../images/Jupiter1_Page1bis.png",
       carrousel_img2: "../images/Jupiter2_Page1bis.png",
       carrousel_img3: "../images/Jupiter3_Page1bis.png",
@@ -226,7 +226,7 @@ const infoSolarSystem = [
     number_of_satellites: 27,
     ring_system: true,
     img: {
-      description_img: "../images/Uranus1_Page1bis.png",
+      description_img: "../images/Uranus.png",
       carrousel_img1: "../images/Uranus1_Page1bis.png",
       carrousel_img2: "../images/Uranus2_Page1bis.png",
       carrousel_img3: "../images/Uranus3_Page1bis.png",
@@ -254,7 +254,7 @@ const infoSolarSystem = [
     number_of_satellites: 14,
     ring_system: true,
     img: {
-      description_img: "../images/Neptune1_Page1bis.png",
+      description_img: "../images/Neptune.png",
       carrousel_img1: "../images/Neptune1_Page1bis.png",
       carrousel_img2: "../images/Neptune2_Page1bis.png",
       carrousel_img3: "../images/Neptune3_Page1bis.jpg",
