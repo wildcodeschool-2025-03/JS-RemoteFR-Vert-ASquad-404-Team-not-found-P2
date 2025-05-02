@@ -1,0 +1,40 @@
+.container {
+  margin-top: 4em !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel .thumbs {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel .thumb {
+  border: none !important;
+}
+
+.carousel .thumb.selected {
+  border: 3px solid white !important;
+}
+
+.thumbs-wrapper {
+  padding-bottom: 3rem;
+}
+
+.control-dots {
+  display: none !important;
+}
+
+.carousel-status {
+  display: none !important;
+}
+
+.slider-wrapper img {
+  max-height: 33rem;
+  max-width: 33rem;
+  margin-top: 2rem;
+  @media screen and (max-width: 768px) {
+    max-height: 15rem;
+    max-width: 15rem;
+  }
+}
