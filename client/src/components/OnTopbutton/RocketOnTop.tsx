@@ -6,13 +6,18 @@ const RocketOnTop = () => {
 
   const scrollToTop = async () => {
     const audio = new Audio("/sounds/Rocket_Launcher.mp3");
-    audio.volume = 0.4;
+    audio.volume = 0.5;
 
     try {
       await audio.play();
     } catch (err) {
       console.warn("Oups, pas de son !", err);
     }
+
+    setTimeout(() => {
+      audio.pause();
+      audio.currentTime = 0;
+    }, 1500);
 
     setLaunched(true);
     setTimeout(() => {
