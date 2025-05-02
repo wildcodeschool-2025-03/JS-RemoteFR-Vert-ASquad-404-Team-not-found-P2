@@ -53,11 +53,19 @@ export default function PlanetInfo() {
 
   console.log(planet);
 
-  // /!\ @ALex: pour ton composant caroussel, tu peux récupérer les images en utilisant planet.img
   return (
     <div className="planetinfo-page">
       <article className="planet-description">
-        <img src={planet?.img.description_img} alt="Panète" width={500} />
+        <img
+          src={planet?.img.description_img}
+          alt="Panète"
+          width={500}
+          style={
+            planet?.name === "Saturne" || planet?.name === "Soleil"
+              ? { animation: "rotate 10000s linear infinite" }
+              : { animation: "rotate 250s linear infinite" }
+          }
+        />
         <div className="description-box">
           <h2>{planet?.name}</h2>
           <p>{planet?.description}</p>

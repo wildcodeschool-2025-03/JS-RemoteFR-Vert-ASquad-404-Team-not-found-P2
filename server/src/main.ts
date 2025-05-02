@@ -30,7 +30,7 @@ const infoSolarSystem = [
     number_of_satellites: 0,
     ring_system: false,
     img: {
-      description_img: "../images/Soleil.png",
+      description_img: "../images/Soleil1_Page1bis.png",
       carrousel_img1: "../images/Soleil1_Page1bis.png",
       carrousel_img2: "../images/Soleil2_Page1bis.png",
       carrousel_img3: "../images/Soleil3_Page1bis.png",
@@ -114,7 +114,7 @@ const infoSolarSystem = [
     number_of_satellites: 1,
     ring_system: false,
     img: {
-      description_img: "../images/Terre.png",
+      description_img: "../images/Terre1_Page1bis.png",
       carrousel_img1: "../images/Terre1_Page1bis.png",
       carrousel_img2: "../images/Terre2_Page1bis.png",
       carrousel_img3: "../images/Terre3_Page1bis.png",
@@ -198,7 +198,7 @@ const infoSolarSystem = [
     number_of_satellites: 82,
     ring_system: true,
     img: {
-      description_img: "../images/Saturne.png",
+      description_img: "../images/Saturne1_Page1bis.png",
       carrousel_img1: "../images/Saturne1_Page1bis.png",
       carrousel_img2: "../images/Saturne2_Page1bis.png",
       carrousel_img3: "../images/Saturne3_Page1bis.png",
