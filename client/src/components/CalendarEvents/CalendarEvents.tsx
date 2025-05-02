@@ -52,6 +52,15 @@ export default function CalendarEvents() {
         ),
     ) || [];
 
+  function onClickDay(date: Date) {
+    if (
+      transDate.length > 0 &&
+      transDate.some((b) => b.getTime() === date.getTime())
+    ) {
+      return alert("Action");
+    }
+  }
+
   return (
     <main className="mainEvents">
       <h1>Calendrier d'evénements</h1>
@@ -68,6 +77,7 @@ export default function CalendarEvents() {
           }
           return classes;
         }}
+        onClickDay={onClickDay}
       />
       <p>
         <span className="point" /> : Jour d'éclipse solaire
