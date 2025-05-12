@@ -1,5 +1,7 @@
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+
 import Slider from "../components/Slider/Slider";
 import "../styles/PlanetInfo.css";
 
@@ -53,18 +55,38 @@ export default function PlanetInfo() {
   console.log(planet);
 
   return (
-    <div className="planetinfo-page">
+    <motion.div
+      className="planetinfo-page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 1.4 } }}
+    >
       <article className="planet-description">
-        <img
-          src={planet?.img.description_img}
-          alt="Planète"
-          width={500}
-          style={
-            planet?.name === "Saturne" || planet?.name === "Soleil"
-              ? { animation: "rotate 10000s linear infinite" }
-              : { animation: "rotate 250s linear infinite" }
-          }
-        />
+        <motion.div
+          className="image-container"
+          initial={{ x: -400, y: 400, scale: 0.2 }}
+          animate={{
+            x: 0,
+            y: 0,
+            scale: 1,
+            transition: {
+              type: "spring",
+              bounce: 0.2,
+              ease: "easeIn",
+              duration: 2.8,
+            },
+          }}
+        >
+          <img
+            src={planet?.img.description_img}
+            alt="Planète"
+            width={500}
+            style={
+              planet?.name === "Saturne" || planet?.name === "Soleil"
+                ? { animation: "rotate 10000s linear infinite" }
+                : { animation: "rotate 250s linear infinite" }
+            }
+          />
+        </motion.div>
         <div className="description-box">
           <h2>{planet?.name}</h2>
           <p>{planet?.description}</p>
@@ -120,6 +142,6 @@ export default function PlanetInfo() {
         img2={planet?.img.carrousel_img2}
         img3={planet?.img.carrousel_img3}
       />
-    </div>
+    </motion.div>
   );
 }
