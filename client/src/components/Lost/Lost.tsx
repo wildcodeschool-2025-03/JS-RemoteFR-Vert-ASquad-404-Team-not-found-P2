@@ -1,29 +1,52 @@
 import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Lost.css";
 
 function Lost() {
   const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate("/");
-    }, 3000);
+    }, 5000);
 
-    return () => clearTimeout(timer);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", handleResize);
+    };
   }, [navigate]);
 
   return (
     <div className="lost-container">
       <h1>Vous êtes arrivés dans le vide intersidéral.</h1>
-      <motion.div
-        className="spinner"
-        animate={{ rotate: 360 }}
+      <motion.img
+        src="/images/Astroload.png"
+        alt="Astronaute dérivant"
+        className="astronaut"
+        animate={{
+          rotate: [0, 360],
+          x: isMobile ? [-70, 70, -70] : [-180, 180, -180],
+        }}
         transition={{
-          duration: 1.5,
-          repeat: Number.POSITIVE_INFINITY,
-          ease: "linear",
+          rotate: {
+            duration: 4,
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: "loop",
+            ease: "linear",
+          },
+          x: {
+            duration: 6,
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: "mirror",
+            ease: "easeInOut",
+          },
         }}
       />
     </div>

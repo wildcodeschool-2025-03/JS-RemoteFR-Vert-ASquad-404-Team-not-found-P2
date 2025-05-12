@@ -9,10 +9,30 @@
   min-height: calc(75vh - 4.7rem);
 }
 
-.spinner {
-  width: 6rem;
-  height: 6rem;
-  border: 6px solid rgba(255, 255, 255, 0.1);
-  border-top: 6px solid #ff0088;
-  border-radius: 50%;
+.astronaut {
+  width: 150px;
+  height: auto;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .lost-container {
+    padding-top: 6vh;
+    gap: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    min-height: 100vh;
+  }
+
+  .lost-container h1 {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    max-width: 280px;
+  }
+
+  .astronaut {
+    width: 100px;
+    margin-top: 2rem;
+  }
 }
