@@ -10,6 +10,8 @@ type PlanetDataType = {
     carrousel_img1: string;
     carrousel_img2: string;
     carrousel_img3: string;
+    carrousel_img4: string;
+    carrousel_img5: string;
   };
   description: string;
   planet_type: string;
@@ -121,6 +123,8 @@ export default function PlanetInfo() {
         img1={planet?.img.carrousel_img1}
         img2={planet?.img.carrousel_img2}
         img3={planet?.img.carrousel_img3}
+        img4={planet?.img.carrousel_img4}
+        img5={planet?.img.carrousel_img5}
       />
     </div>
   );
