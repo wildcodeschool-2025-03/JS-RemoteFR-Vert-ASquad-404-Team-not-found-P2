@@ -1,5 +1,6 @@
 .app-container.container-bg {
   position: relative;
+  width: 100%;
   background-image: url("/images/Navette.png");
   background-size: cover;
   background-position: top;
@@ -29,7 +30,7 @@
   justify-content: space-evenly;
 }
 
-.planet-description img {
+.image-container {
   position: absolute;
   left: 50%;
   width: 15em;
