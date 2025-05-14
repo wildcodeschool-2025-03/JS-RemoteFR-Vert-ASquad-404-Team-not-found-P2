@@ -276,8 +276,15 @@ const infoSolarSystem = [
 ];
 
 app.get("/:id", (req, res) => {
-  res.send(infoSolarSystem[Number.parseInt(req.params.id)]);
-  res.json([infoSolarSystem]);
+  const { id } = req.params;
+  const thing = infoSolarSystem.find((i) => i.id === Number(id));
+  if (thing) {
+    res.json(thing);
+    return;
+  }
+  res.status(404).json({
+    message: "Not found",
+  });
 });
 
 const port = process.env.APP_PORT;
