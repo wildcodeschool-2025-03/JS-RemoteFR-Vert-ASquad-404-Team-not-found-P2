@@ -32,19 +32,14 @@ type PlanetDataType = {
 };
 
 export default function PlanetInfo() {
-  // id from selected planet card
   const { id } = useParams();
-
-  //unseState hook to store selected planet data
   const [planet, setPlanet] = useState<PlanetDataType | null>(null);
 
-  // fetch selected planet data using id
   useEffect(() => {
     fetch(`http://localhost:3310/${id}`)
       .then((response) => response.json())
       .then((data) => setPlanet(data))
       .catch((error) => console.log("error:", error));
-    // get app-container element to change background in useEffect
     document.querySelector(".app-container")?.classList.add("container-bg");
 
     return () => {

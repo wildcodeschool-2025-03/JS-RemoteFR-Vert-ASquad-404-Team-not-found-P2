@@ -1,12 +1,5 @@
-// Load environment variables from .env file
 import "dotenv/config";
-
-// Check database connection
-// Note: This is optional and can be removed if the database connection
-// is not required when starting the application
 import "../database/checkConnection";
-
-// Import the Express application from ./app
 import app from "./app";
 
 const infoSolarSystem = [
@@ -14,14 +7,14 @@ const infoSolarSystem = [
     id: 0,
     name: "Soleil",
     planet_type: "Étoile",
-    sun_distance: 0, // Le Soleil est au centre du système solaire
-    diameter: 1392000, // Diamètre en kilomètres
-    mass: 1.989e30, // Masse en kilogrammes
-    density: 1410, // Densité en kg/m3
-    gravity: 274, // Gravité en pourcentage de celle de la Terre
-    orbital_period_days: 0, // Période orbitale est 0, car c’est le centre du système
-    rotation_period_days: 25, // Période de rotation en jours (pôle équatorial)
-    mean_temp_deg: 5505, // Température moyenne en Celsius
+    sun_distance: 0,
+    diameter: 1392000,
+    mass: 1.989e30,
+    density: 1410,
+    gravity: 274,
+    orbital_period_days: 0,
+    rotation_period_days: 25,
+    mean_temp_deg: 5505,
     atmospheric_composition: {
       composition1: "73% d'hydrogène",
       composition2: "25% d'hélium",
@@ -45,13 +38,13 @@ const infoSolarSystem = [
     name: "Mercure",
     planet_type: "Tellurique",
     sun_distance: 57.91e6,
-    diameter: 4879, // Diamètre en kilomètres
-    mass: 3.3011e23, // Masse en kilogrammes
-    density: 5427, // Densité en kg/m3
-    gravity: 38, // Gravité en pourcentage de celle de la Terre
+    diameter: 4879,
+    mass: 3.3011e23,
+    density: 5427,
+    gravity: 38,
     orbital_period_days: 88,
-    rotation_period_days: 58.6, // Période de rotation en jours (pôle équatorial)
-    mean_temp_deg: 167, // Température moyenne en Celsius
+    rotation_period_days: 58.6,
+    mean_temp_deg: 167,
     atmospheric_composition: {
       composition1: "95% d'oxygène",
       composition2: "4% de Sodium",
@@ -75,13 +68,13 @@ const infoSolarSystem = [
     name: "Vénus",
     planet_type: "Tellurique",
     sun_distance: 108.2e6,
-    diameter: 12104, // Diamètre en kilomètres
-    mass: 4.867e24, // Masse en kilogrammes
-    density: 5243, // Densité en kg/m3
-    gravity: 91, // Gravité en pourcentage de celle de la Terre
+    diameter: 12104,
+    mass: 4.867e24,
+    density: 5243,
+    gravity: 91,
     orbital_period_days: 225,
-    rotation_period_days: 243, // Période de rotation en jours (pôle équatorial)
-    mean_temp_deg: 464, // Température moyenne en Celsius
+    rotation_period_days: 243,
+    mean_temp_deg: 464,
     atmospheric_composition: {
       composition1: "96% de Dioxyde de Carbone",
       composition2: "3.5% d'Azote",
@@ -105,13 +98,13 @@ const infoSolarSystem = [
     name: "Terre",
     planet_type: "Tellurique",
     sun_distance: 149.6e6,
-    diameter: 12742, // Diamètre en kilomètres
-    mass: 5.972e24, // Masse en kilogrammes
-    density: 5515, // Densité en kg/m3
-    gravity: 100, // Gravité en pourcentage de celle de la Terre
+    diameter: 12742,
+    mass: 5.972e24,
+    density: 5515,
+    gravity: 100,
     orbital_period_days: 365.25,
-    rotation_period_days: 1, // Période de rotation en jours (pôle équatorial)
-    mean_temp_deg: 14, // Température moyenne en Celsius
+    rotation_period_days: 1,
+    mean_temp_deg: 14,
     atmospheric_composition: {
       composition1: "78% d'Azote",
       composition2: "21% d'Oxygène",
@@ -135,13 +128,13 @@ const infoSolarSystem = [
     name: "Mars",
     planet_type: "Tellurique",
     sun_distance: 227.9e6,
-    diameter: 6779, // Diamètre en kilomètres
-    mass: 6.4171e23, // Masse en kilogrammes
-    density: 3933, // Densité en kg/m3
-    gravity: 38, // Gravité en pourcentage de celle de la Terre
+    diameter: 6779,
+    mass: 6.4171e23,
+    density: 3933,
+    gravity: 38,
     orbital_period_days: 687,
-    rotation_period_days: 1.03, // Période de rotation en jours (pôle équatorial)
-    mean_temp_deg: -63, // Température moyenne en Celsius
+    rotation_period_days: 1.03,
+    mean_temp_deg: -63,
     atmospheric_composition: {
       composition1: "95% de Dioxyde de Carbone",
       composition2: "3% d'Azote",
@@ -165,13 +158,13 @@ const infoSolarSystem = [
     name: "Jupiter",
     planet_type: "Gazeuse",
     sun_distance: 778.5e6,
-    diameter: 139820, // Diamètre en kilomètres
-    mass: 1.8982e27, // Masse en kilogrammes
-    density: 1326, // Densité en kg/m3
-    gravity: 252, // Gravité en pourcentage de celle de la Terre
+    diameter: 139820,
+    mass: 1.8982e27,
+    density: 1326,
+    gravity: 252,
     orbital_period_days: 4333,
-    rotation_period_days: 0.41, // Période de rotation en jours (pôle équatorial)
-    mean_temp_deg: -108, // Température moyenne en Celsius
+    rotation_period_days: 0.41,
+    mean_temp_deg: -108,
     atmospheric_composition: {
       composition1: "89% d'Hydrognène",
       composition2: "10% d'Hélium",
@@ -195,13 +188,13 @@ const infoSolarSystem = [
     name: "Saturne",
     planet_type: "Gazeuse",
     sun_distance: 1433.5e6,
-    diameter: 116460, // Diamètre en kilomètres
-    mass: 5.683e26, // Masse en kilogrammes
-    density: 687, // Densité en kg/m3
-    gravity: 107, // Gravité en pourcentage de celle de la Terre
+    diameter: 116460,
+    mass: 5.683e26,
+    density: 687,
+    gravity: 107,
     orbital_period_days: 10759,
-    rotation_period_days: 0.45, // Période de rotation en jours (pôle équatorial)
-    mean_temp_deg: -139, // Température moyenne en Celsius
+    rotation_period_days: 0.45,
+    mean_temp_deg: -139,
     atmospheric_composition: {
       composition1: "96% d'Hydrogène",
       composition2: "3% d'Hélium",
@@ -225,13 +218,13 @@ const infoSolarSystem = [
     name: "Uranus",
     planet_type: "Gazeuse",
     sun_distance: 2872.5e6,
-    diameter: 50724, // Diamètre en kilomètres
-    mass: 8.681e25, // Masse en kilogrammes
-    density: 1271, // Densité en kg/m3
-    gravity: 89, // Gravité en pourcentage de celle de la Terre
+    diameter: 50724,
+    mass: 8.681e25,
+    density: 1271,
+    gravity: 89,
     orbital_period_days: 30687,
-    rotation_period_days: -0.72, // Période de rotation en jours (pôle équatorial)
-    mean_temp_deg: -197, // Température moyenne en Celsius
+    rotation_period_days: -0.72,
+    mean_temp_deg: -197,
     atmospheric_composition: {
       composition1: "83% d'Hydrogène",
       composition2: "15% d'Hélium",
@@ -255,13 +248,13 @@ const infoSolarSystem = [
     name: "Neptune",
     planet_type: "Gazeuse",
     sun_distance: 4495.1e6,
-    diameter: 49244, // Diamètre en kilomètres
-    mass: 1.02413e26, // Masse en kilogrammes
-    density: 1638, // Densité en kg/m3
-    gravity: 114, // Gravité en pourcentage de celle de la Terre
+    diameter: 49244,
+    mass: 1.02413e26,
+    density: 1638,
+    gravity: 114,
     orbital_period_days: 60190,
-    rotation_period_days: 0.67, // Période de rotation en jours (pôle équatorial)
-    mean_temp_deg: -214, // Température moyenne en Celsius
+    rotation_period_days: 0.67,
+    mean_temp_deg: -214,
     atmospheric_composition: {
       composition1: "80% d'Hydrogène",
       composition2: "19% d'Hélium",
@@ -282,16 +275,13 @@ const infoSolarSystem = [
   },
 ];
 
-// Modified route using id from the front end planet selection to only return the corresponding planet
 app.get("/:id", (req, res) => {
   res.send(infoSolarSystem[Number.parseInt(req.params.id)]);
   res.json([infoSolarSystem]);
 });
 
-// Get the port from the environment variables
 const port = process.env.APP_PORT;
 
-// Start the server and listen on the specified port
 app
   .listen(port, () => {
     console.info(`Server is listening on port ${port}`);
