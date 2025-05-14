@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./CalendarEvents.css";
+import { motion } from "motion/react";
 import Calendar from "react-calendar";
 
 type ValuePiece = Date | null;
@@ -80,7 +81,11 @@ export default function CalendarEvents() {
   }
 
   return (
-    <main className="mainEvents">
+    <motion.main
+      className="mainEvents"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.4 } }}
+    >
       <h1>Calendrier d'evénements</h1>
       <Calendar
         onChange={onChange}
@@ -108,6 +113,6 @@ export default function CalendarEvents() {
           Heure UTC : {infoEclipse.td_of_greatest_eclipse}
         </p>
       </div>
-    </main>
+    </motion.main>
   );
 }
