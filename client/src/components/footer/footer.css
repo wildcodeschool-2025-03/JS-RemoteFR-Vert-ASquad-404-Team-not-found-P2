@@ -11,6 +11,11 @@ footer {
 }
 .iconesReseaux img {
   height: 3em;
+  transition: all 1s;
+}
+
+.iconesReseaux img:hover {
+  transform: scale(1.5);
 }
 
 footer p {
