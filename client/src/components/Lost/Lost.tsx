@@ -6,11 +6,16 @@ import "./Lost.css";
 function Lost() {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [secondsLeft, setSecondsLeft] = useState(5);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate("/");
     }, 5000);
+
+    const interval = setInterval(() => {
+      setSecondsLeft((prev) => prev - 1);
+    }, 1000);
 
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -19,6 +24,7 @@ function Lost() {
     window.addEventListener("resize", handleResize);
     return () => {
       clearTimeout(timer);
+      clearInterval(interval);
       window.removeEventListener("resize", handleResize);
     };
   }, [navigate]);
@@ -49,6 +55,7 @@ function Lost() {
           },
         }}
       />
+      <h2>Retour sur terre dans {secondsLeft}</h2>
     </div>
   );
 }
