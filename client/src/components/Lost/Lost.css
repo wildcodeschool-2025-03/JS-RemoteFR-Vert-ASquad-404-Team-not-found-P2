@@ -1,0 +1,38 @@
+.lost-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10vh;
+  text-align: center;
+  gap: 2rem;
+  color: white;
+  min-height: calc(75vh - 4.7rem);
+}
+
+.astronaut {
+  width: 150px;
+  height: auto;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .lost-container {
+    padding-top: 6vh;
+    gap: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    min-height: 100vh;
+  }
+
+  .lost-container h1 {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    max-width: 280px;
+  }
+
+  .astronaut {
+    width: 100px;
+    margin-top: 2rem;
+  }
+}

@@ -1,0 +1,50 @@
+.rocket-on-top {
+  position: fixed;
+  bottom: 1.875em;
+  right: 1em;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1000;
+  width: 10em;
+  height: auto;
+  animation: float 3s ease-in-out infinite;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.rocket-on-top img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.rocket-on-top.launched {
+  animation: none;
+  pointer-events: none;
+  transform: translateY(-300px) scale(1.1);
+  opacity: 0;
+  transition: transform 1.2s ease-out, opacity 1.2s ease-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.375em);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 799px) {
+  .rocket-on-top {
+    right: auto;
+    left: 85.5%;
+    bottom: 1em;
+    transform: translateX(-50%);
+    width: 5em;
+  }
+}
