@@ -48,7 +48,7 @@ export default function CalendarEvents() {
 
   useEffect(() => {
     fetch(
-      "https://www.datastro.eu/api/explore/v2.1/catalog/datasets/five-millennium-catalog-of-solar-eclipses0/records?select=ecl_type%2Ccalendar_year%2C%20calendar_month%2C%20calendar_day%2C%20td_of_greatest_eclipse&limit=100&refine=calendar_year%3A2025&lang=fr",
+      "https://www.datastro.eu/api/explore/v2.1/catalog/datasets/five-millennium-catalog-of-solar-eclipses0/records?select=ecl_type%2Ccalendar_year%2C%20calendar_month%2C%20calendar_day%2C%20td_of_greatest_eclipse&limit=100&refine=filename%3A2001%20-%202100&lang=fr",
     )
       .then((response) => response.json())
       .then((data) => setDateEvent(data));
