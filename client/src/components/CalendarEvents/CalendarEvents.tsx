@@ -5,7 +5,6 @@ import Calendar from "react-calendar";
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 type dateEventType = {
-  total_count: number;
   results: [
     {
       ecl_type: string;
@@ -17,9 +16,19 @@ type dateEventType = {
   ];
 };
 
+type checkDateType = {
+  ecl_type: string;
+  calendar_year: number;
+  calendar_month: string;
+  calendar_day: number;
+  td_of_greatest_eclipse: [string];
+};
+
 export default function CalendarEvents() {
   const [value, onChange] = useState<Value>(new Date());
   const [dateEvent, setDateEvent] = useState<dateEventType | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [infoDate, setInfoDate] = useState<checkDateType>();
 
   const months = [
     "Jan",
@@ -52,6 +61,24 @@ export default function CalendarEvents() {
         ),
     ) || [];
 
+  const handleClick = (date: Date) => {
+    const checkDate: checkDateType = Object.values(
+      dateEvent instanceof Object ? dateEvent?.results : Object,
+    ).find(
+      (d) =>
+        d.calendar_day === date.getDate() &&
+        d.calendar_month === months[date.getMonth()],
+    );
+
+    checkDate ? setIsVisible(!isVisible) : setIsVisible(false);
+    checkDate ? setInfoDate(checkDate) : "";
+  };
+
+  let infoEclipse: checkDateType = Object.assign({});
+  if (infoDate) {
+    infoEclipse = infoDate;
+  }
+
   return (
     <main className="mainEvents">
       <h1>Calendrier d'evénements</h1>
@@ -68,10 +95,19 @@ export default function CalendarEvents() {
           }
           return classes;
         }}
+        onClickDay={(date) => handleClick(date)}
+        onActiveStartDateChange={() => setIsVisible(false)}
       />
       <p>
         <span className="point" /> : Jour d'éclipse solaire
       </p>
+      <div id="wrapper">
+        <p className={isVisible ? "showdiv" : "hide"}>
+          Type d'eclipse : {infoEclipse.ecl_type},
+          <br />
+          Heure UTC : {infoEclipse.td_of_greatest_eclipse}
+        </p>
+      </div>
     </main>
   );
 }
