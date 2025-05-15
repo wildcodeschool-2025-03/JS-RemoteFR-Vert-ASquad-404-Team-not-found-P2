@@ -22,23 +22,16 @@ type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 export default function PicOfTheDay() {
-  //useState hook to store the picture of the day.
   const [picOfTheDay, setPicOfTheDay] = useState<PicOfTheDay_type | null>(null);
-
-  //useState hook to store the date of the picture of the day, initial value is the current date.
   const [value, onChange] = useState<Value>(new Date());
 
-  //useEffect hook to fetch the picture of the day when the date changes.
   useEffect(() => {
-    //Convert the selected date to a string in the format "yyyy-mm-dd" to fit API requirements.
     const selectedDate = new Date(value instanceof Date ? value : new Date());
     const year: number = selectedDate.getFullYear();
     const month: number = selectedDate.getMonth() + 1;
     const day: number = selectedDate.getDate();
-
     const formatedDate: string = `${year}-${month}-${day}`;
 
-    //Fetch the picture of the day from the API using the selected date (or the current date by default).
     fetch(
       `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${formatedDate}`,
     )
