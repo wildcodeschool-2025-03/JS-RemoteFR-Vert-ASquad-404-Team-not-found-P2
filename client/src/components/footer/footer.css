@@ -1,0 +1,25 @@
+footer {
+  margin: 0 auto;
+  padding: 3em 0 1em 0;
+}
+
+.iconesReseaux {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3em;
+}
+.iconesReseaux img {
+  height: 3em;
+  transition: all 1s;
+}
+
+.iconesReseaux img:hover {
+  transform: scale(1.5);
+}
+
+footer p {
+  display: block;
+  text-align: center;
+  color: white;
+}
