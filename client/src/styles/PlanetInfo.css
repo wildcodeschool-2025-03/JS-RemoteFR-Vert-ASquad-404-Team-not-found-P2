@@ -1,5 +1,6 @@
 .app-container.container-bg {
   position: relative;
+  width: 100%;
   background-image: url("/images/Navette.png");
   background-size: cover;
   background-position: top;
@@ -18,6 +19,7 @@
 
 .planetinfo-page {
   display: flex;
+
   flex-direction: column;
   align-items: center;
   color: white;
@@ -29,17 +31,27 @@
   justify-content: space-evenly;
 }
 
-.planet-description img {
+.image-container {
   position: absolute;
+  top: -5%;
   left: 50%;
-  width: 15em;
-  height: 15em;
-  object-fit: cover;
-  object-position: center;
+  width: 10em;
+  height: 10em;
   z-index: 1;
   @media screen and (min-width: 768px) {
     top: 15%;
     left: 30%;
+    width: 35em;
+    height: 35em;
+  }
+}
+
+.image-container img {
+  object-fit: cover;
+  object-position: center;
+  width: 15em;
+  height: 15em;
+  @media screen and (min-width: 768px) {
     width: 35em;
     height: 35em;
   }

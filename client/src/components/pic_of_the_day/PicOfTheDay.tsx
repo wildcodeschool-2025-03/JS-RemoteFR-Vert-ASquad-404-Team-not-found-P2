@@ -24,7 +24,6 @@ type Value = ValuePiece | [ValuePiece, ValuePiece];
 export default function PicOfTheDay() {
   //useState hook to store the picture of the day.
   const [picOfTheDay, setPicOfTheDay] = useState<PicOfTheDay_type | null>(null);
-
   //useState hook to store the date of the picture of the day, initial value is the current date.
   const [value, onChange] = useState<Value>(new Date());
 
@@ -35,7 +34,6 @@ export default function PicOfTheDay() {
     const year: number = selectedDate.getFullYear();
     const month: number = selectedDate.getMonth() + 1;
     const day: number = selectedDate.getDate();
-
     const formatedDate: string = `${year}-${month}-${day}`;
 
     //Fetch the picture of the day from the API using the selected date (or the current date by default).

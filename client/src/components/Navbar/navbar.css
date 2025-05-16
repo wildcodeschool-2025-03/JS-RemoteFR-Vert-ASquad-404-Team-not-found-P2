@@ -8,7 +8,6 @@ nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
-  width: 100vw;
   top: 0;
   left: 0;
   right: 0;
@@ -19,6 +18,11 @@ nav {
   width: auto;
   grid-column: 1;
   grid-row: 1 / 3;
+  transition: all 1s;
+}
+
+.logo:hover {
+  transform: scale(1.3);
 }
 
 .links {
@@ -69,20 +73,6 @@ nav {
 }
 
 @media screen and (max-width: 768px) {
-  .hidden .links {
-    display: none;
-    visibility: hidden;
-  }
-
-  .show-nav .links {
-    display: flex;
-    visibility: visible;
-    margin: 4vh 8vh 0 0;
-    gap: 3vw;
-    font-size: 1em;
-    flex-wrap: wrap;
-  }
-
   .burger {
     display: block;
   }
@@ -104,25 +94,124 @@ nav {
   .burger-bar::before,
   .burger-bar::after {
     content: "";
-  }
-
-  .burger-bar::before {
-    transform: translateY(-12px);
-  }
-
-  .burger-bar::after {
-    transform: translateY(10px);
+    transform-origin: center center;
+    position: absolute;
+    transition: transform 0.5s ease;
   }
 
   .show-nav .burger-bar {
     background: transparent;
+    transition: 1s;
+  }
+
+  .hidden .burger-bar {
+    background: white;
+    transition: 1s;
   }
 
   .show-nav .burger-bar::before {
-    transform: translateY(1.5px) rotate(50deg);
+    animation: slideRotateBefore 1s ease forwards;
   }
 
   .show-nav .burger-bar::after {
-    transform: translateY(-1.5px) rotate(-50deg);
+    animation: slideRotateAfter 1s ease forwards;
+  }
+
+  @keyframes slideRotateBefore {
+    0% {
+      transform: translateY(-12px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(0px) rotate(45deg);
+    }
+  }
+
+  @keyframes slideRotateAfter {
+    0% {
+      transform: translateY(12px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(0px) rotate(-45deg);
+    }
+  }
+
+  .hidden .burger-bar::before {
+    animation: rotateSlideBefore 1s ease forwards;
+  }
+
+  .hidden .burger-bar::after {
+    animation: rotateSlideAfter 1s ease forwards;
+  }
+
+  @keyframes rotateSlideBefore {
+    0% {
+      transform: translateY(0px) rotate(45deg);
+    }
+    50% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(-12px) rotate(0deg);
+    }
+  }
+
+  @keyframes rotateSlideAfter {
+    0% {
+      transform: translateY(0px) rotate(-45deg);
+    }
+    50% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(12px) rotate(0deg);
+    }
+  }
+
+  .show-nav .links {
+    display: flex;
+    visibility: visible;
+    margin: 4vh 12vh 0 0;
+    gap: 3vw;
+    font-size: 1em;
+    flex-wrap: wrap;
+    animation: slide 1s ease forwards;
+    opacity: 1;
+    transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+  }
+
+  .hidden .links {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 4vh 12vh 0 0;
+    gap: 3vw;
+    font-size: 1em;
+    animation: slideAfter 1s ease forwards;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideAfter {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateY(-20px);
+    }
   }
 }
