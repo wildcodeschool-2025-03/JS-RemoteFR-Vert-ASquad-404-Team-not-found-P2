@@ -69,7 +69,7 @@ export default function CalendarEvents() {
       (d) =>
         d.calendar_day === date.getDate() &&
         d.calendar_month === months[date.getMonth()] &&
-        d.calendar_year === date.getFullYear,
+        d.calendar_year === date.getFullYear(),
     );
 
     checkDate ? setIsVisible(!isVisible) : setIsVisible(false);
